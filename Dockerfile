@@ -3,6 +3,8 @@ MAINTAINER Dan Brown <ssd.dan.brown@googlemail.com>
 RUN set -xe
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -yqq
+RUN locale-gen en_US.UTF-8
+RUN export LANG=en_US.UTF-8
 RUN apt-get install git software-properties-common python-software-properties curl mcrypt -yqq
 RUN add-apt-repository -y ppa:ondrej/php
 RUN apt-get update -yqq
