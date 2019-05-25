@@ -1,14 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Dan Brown <ssd.dan.brown@googlemail.com>
 RUN set -xe
-RUN export DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -yqq
-RUN apt-get install git software-properties-common language-pack-en-base python-software-properties curl mcrypt locales -yqq
+RUN apt-get install git software-properties-common language-pack-en-base curl locales -yqq
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-RUN add-apt-repository -y ppa:ondrej/php
-RUN apt-get update -yqq
-RUN apt-get install php7.1-fpm php7.1-cgi php7.1-common php7.1-curl php7.1-mbstring php7.1-ldap php7.1-mcrypt php7.1-tidy php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-sqlite3 php7.1-xdebug -yqq
+RUN apt-get install php7.2-cli php7.2-fpm php7.2-cgi php7.2-common php7.2-curl php7.2-mbstring php7.2-ldap php7.2-tidy php7.2-xml php7.2-zip php7.2-gd php7.2-mysql php7.2-sqlite3 php7.2-xdebug -yqq
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
