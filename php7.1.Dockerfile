@@ -1,9 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Dan Brown <ssd.dan.brown@googlemail.com>
+ARG DEBIAN_FRONTEND=noninteractive
 RUN set -xe
-RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -yqq
-RUN apt-get install git software-properties-common language-pack-en-base python-software-properties curl mcrypt locales -yqq
+RUN apt-get install git software-properties-common language-pack-en-base curl mcrypt locales -yqq
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8

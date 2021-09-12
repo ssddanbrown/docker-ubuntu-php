@@ -1,7 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Dan Brown <ssd.dan.brown@googlemail.com>
+ARG DEBIAN_FRONTEND=noninteractive
 RUN set -xe
-ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -yqq
 RUN apt-get install git software-properties-common language-pack-en-base curl locales -yqq
 RUN add-apt-repository ppa:ondrej/php
