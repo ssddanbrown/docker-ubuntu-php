@@ -1,5 +1,7 @@
 # Ubuntu PHP Docker Containers
 
+[![Docker](https://github.com/ssddanbrown/docker-ubuntu-php/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ssddanbrown/docker-ubuntu-php/actions/workflows/docker-publish.yml)
+
 This repo aims to build a series of containers that:
 
 - Built on a Ubuntu LTS release
